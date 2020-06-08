@@ -84,7 +84,7 @@ source="all_month_earthquakes.csv" host="DESKTOP-6KRAAR8" sourcetype="csv" revie
 source="all_month_earthquakes.csv" host="DESKTOP-6KRAAR8" sourcetype="csv" reviewed AND Fiji
 source="all_month_earthquakes.csv" host="DESKTOP-6KRAAR8" sourcetype="csv" reviewed OR Fiji 
 
-
+https://www.devopsschool.com/tutorial/splunk/labs/fundamental/
 Lab 1 - Splunk Fundamental - Lab Module 3 - Ingesting Data
 Lab 2 - Splunk Fundamental - Lab Module 5 – Searching
 Lab 3 - Splunk Fundamental - Lab Module 6 – Using Fields in Searches
