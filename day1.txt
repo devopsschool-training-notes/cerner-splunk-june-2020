@@ -1,0 +1,111 @@
+Rajesh Kumar
+==================
+1 2 3 4 5 6 7 8 9 0 
+===================================
+Time - 9:00 - 5:PM IST
+============================
+Lunch Break - 1PM-2PM
+Break - 12mins-15min 
+		11:00 AM
+		3.30 PM
+=============================
+Why we are here all togther?
+---Log Mining -> Extract info -> Predict or Find issues
+===========================================================
+Distributed App Run time and Platforms..
+
+
+ReleaseCycle	   Yearly	-> 2 WEEKS		-> IMMEDIATE Release 
+		   No Internet 	-> Internet		-> IOT / AI 	
+SD Architecure 	-> MONOLITHIC 	-> SOA		  	-> Microservice
+i.e		-> MSOFFICE	-> B->WS->AS->DS	->
+Unit 		-> 1		-> 10			-> 300
+DB		-> 1		-> 2-3			-> 300
+SD Model	-> Waterfall	-> Agile		-> DevOps -> DevSecOps
+								- > SRE -> 
+
+Platform	-> PHYSCIAL	-> Virtualization	-> Containers		
+================================================================================	
+							300 MS X 20 = 600 Containers
+							
+Data SourceS
+		60 HOST	
+		600 Containers
+		600 APPS (APP + WS + DB + LB + C + CDN + DNS)		
+		Network			
++91 8105843520
+==========================================================
+Demo 1 - 
+	Step 1 - Register at Splunk
+	Step 2 - Download Splunk Enterprise
+	Step 3 - Install it Where - In Desktop
+
+Note - 5 People Needs Windows
+-------------------------------
+
+Basic Workflow in Splunk?
+===============================
+Step 1 - Locate Sample Data
+https://www.devopsschool.com/tutorial/splunk/labs/sample-data/
+
+Step 2 - Upload Sample Data.
+		Mindful
+			- Sources
+			- Sourcetypes
+			- Host
+Sample Data file name - 
+https://www.devopsschool.com/tutorial/splunk/labs/sample-data/earthquake/all_month_earthquakes.csv
+
+Step 3: Start Searching using Keyword and Operators
+
+Step 4: Start Searching using Fields
+===================Step 3 AND Step 4===================================
+Sample DATA- https://www.devopsschool.com/tutorial/splunk/labs/sample-data/earthquake/all_month_earthquakes.csv
+SECURITY - YOU GET THIS from WINDOWS log ....
+
+source="mypc-secruity.csv" host="DESKTOP-6KRAAR8" sourcetype="csv" fail*
+source="mypc-secruity.csv" host="DESKTOP-6KRAAR8" sourcetype="csv" error
+source="mypc-secruity.csv" host="DESKTOP-6KRAAR8" sourcetype="csv" "Event ID"=4798
+source="mypc-secruity.csv" host="DESKTOP-6KRAAR8" sourcetype="csv"
+source="all_month_earthquakes.csv" host="DESKTOP-6KRAAR8" sourcetype="csv" mag!="5.5"
+source="all_month_earthquakes.csv" host="DESKTOP-6KRAAR8" sourcetype="csv" mag="5.5"
+source="all_month_earthquakes.csv" host="DESKTOP-6KRAAR8" sourcetype="csv" mag="5.5"
+source="all_month_earthquakes.csv" host="DESKTOP-6KRAAR8" sourcetype="csv"
+source="all_month_earthquakes.csv" host="DESKTOP-6KRAAR8" sourcetype="csv" locationSource=us AND mag="5.5"
+source="all_month_earthquakes.csv" host="DESKTOP-6KRAAR8" sourcetype="csv" locationSource=us OR mag="5.5"
+source="all_month_earthquakes.csv" host="DESKTOP-6KRAAR8" sourcetype="csv" locationSource=us mag="5.5"
+source="all_month_earthquakes.csv" host="DESKTOP-6KRAAR8" sourcetype="csv" Fiji locationSource=us mag="5.5"
+source="all_month_earthquakes.csv" host="DESKTOP-6KRAAR8" sourcetype="csv" Fiji locationSource=us
+source="all_month_earthquakes.csv" host="DESKTOP-6KRAAR8" sourcetype="csv" Fiji locationSource=mb
+source="all_month_earthquakes.csv" host="DESKTOP-6KRAAR8" sourcetype="csv" Fiji locationSource=nc
+source="all_month_earthquakes.csv" host="DESKTOP-6KRAAR8" sourcetype="csv" Fiji
+source="all_month_earthquakes.csv" host="DESKTOP-6KRAAR8" sourcetype="csv" Fi*
+source="all_month_earthquakes.csv" host="DESKTOP-6KRAAR8" sourcetype="csv" reviewed AND Fiji
+source="all_month_earthquakes.csv" host="DESKTOP-6KRAAR8" sourcetype="csv" reviewed AND Fiji
+source="all_month_earthquakes.csv" host="DESKTOP-6KRAAR8" sourcetype="csv" reviewed OR Fiji 
+
+
+Lab 1 - Splunk Fundamental - Lab Module 3 - Ingesting Data
+Lab 2 - Splunk Fundamental - Lab Module 5 – Searching
+Lab 3 - Splunk Fundamental - Lab Module 6 – Using Fields in Searches
+SAMPLE-DATA - https://www.devopsschool.com/tutorial/splunk/labs/sample-data/Splunk_f1_Data.zip
+
+
+Step 5: Start Searching using Commands
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
