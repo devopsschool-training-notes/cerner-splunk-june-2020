@@ -87,6 +87,55 @@ https://www.devopsschool.com/tutorial/splunk/labs/fundamental/SplunkFundamentals
 
 ADDITIONAL - MINING and Give me SPL Query in the CHAT
 count, avg, max, mean, median, sum
+source="homeworkdataset.csv" host="HOME" index="home" sourcetype="csv" state=* level="critical" | stats count(usr)
 
+source="homeworkdataset.csv" host="HOME" index="home" sourcetype="csv" state=* level=* | stats avg(backupduration)
+
+source="Splunk_f1_Data.zip:*" host="W1862424"  | stats count by host
+
+source="access_30day.log"
+| stats count(clientip)
+
+source="access_30day.log"
+| stats avg(date_minute)
+
+
+source="homeworkdataset.csv" host="HOME" index="home" sourcetype="csv" state=* level=* | stats max(backupvolume)
+
+
+source="db_audit_30DAY.csv" host="C02XD4XYJGH5" index="main" sourcetype="csv" Command=* 
+| rename Duration AS QueryRunTimeInSecond 
+| table Command QueryRunTimeInSecond 
+| stats min(QueryRunTimeInSecond)
+
+
+
+source="homeworkdataset.csv" host="host" index="host" sourcetype="csv" state=*  | stats max(level) as tt by state
+
+Monitoring
+=================================================
+Files and Direct
+===========================
+
+source="E:\\splunk-local\\local-files-direc.csv" host="LOCAL" index="local1" sourcetype="csv" 
+| stats avg(age) AS AvgAge
+
+source="E:\\splunk-local\\local-files-direc.csv" host="LOCAL" index="local1" sourcetype="csv" 
+| stats count(age)
+
+LOCAL EVENT LOGS
+==============================
+index=windows source="WinEventLog:*" host="DESKTOP-6KRAAR8"
+=====================
+Local Perf  
+--------------------
+| mstats count(*) WHERE index="localperf1" AND source="Perfmon:winperf"
+| mstats count(*) WHERE index="localperf1" AND source="Perfmon:localperf2"
+============================================================
+Setup 1 - Local events Logs and SPL to count a Security Event. # Make sure you have new index for it
+
+Setup 2 - Setups files and Directory Log and monitor it. # Make sure you have new index for it
+
+Step 3  - Setup Local Per monitoring.  # Make sure you have new index for it
 
 
