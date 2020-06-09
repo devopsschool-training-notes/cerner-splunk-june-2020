@@ -1,2 +1,92 @@
 Lab 7
 https://www.devopsschool.com/tutorial/splunk/labs/fundamental/SplunkFundamentals1_module7.html
+
+Command types
+=================================
+Streaming commands
+Generating commands
+Transforming commands
+Orchestrating commands
+Dataset processing commands
+
+All Commands
+https://docs.splunk.com/Documentation/Splunk/latest/SearchReference/Commandsbytype
+
+Transforming commands
+
+Sample Data -
+https://www.devopsschool.com/tutorial/splunk/labs/sample-data/
+homeworkdataset.csv
+
+source="homeworkdataset.csv" host="HOME" index="home" sourcetype="csv"
+
+===TOP=======
+
+host=HOME state=* level=critical | top state by level
+host=HOME state=* level=critical | top usr by level
+source="homeworkdataset.csv" host="HOME" index="home" sourcetype="csv"| top limit=2 domain
+source="homeworkdataset.csv" host="HOME" index="home" sourcetype="csv"| top usr
+source="homeworkdataset.csv" host="HOME" index="home" sourcetype="csv"| top limit=20 usr
+source="homeworkdataset.csv" host="HOME" index="home" sourcetype="csv" | top level
+source="homeworkdataset.csv" host="HOME" index="home" sourcetype="csv" state=* level=critical 
+source="homeworkdataset.csv" host="HOME" index="home" sourcetype="csv" state=* level=critical | top state
+source="homeworkdataset.csv" host="HOME" index="home" sourcetype="csv" state=* level=critical | top state by level
+source="homeworkdataset.csv" host="HOME" index="home" sourcetype="csv" state=* | top usr by level
+source="homeworkdataset.csv" host="HOME" index="home" sourcetype="csv" state=* level=critical | top usr by level
+===RARE=======
+host=HOME state=* level=critical | rare state by level
+host=HOME state=* level=critical | rare usr by level
+source="homeworkdataset.csv" host="HOME" index="home" sourcetype="csv"| rare limit=2 domain
+source="homeworkdataset.csv" host="HOME" index="home" sourcetype="csv"| rare usr
+source="homeworkdataset.csv" host="HOME" index="home" sourcetype="csv"| rare limit=20 usr
+source="homeworkdataset.csv" host="HOME" index="home" sourcetype="csv" | rare level
+source="homeworkdataset.csv" host="HOME" index="home" sourcetype="csv" state=* level=critical 
+source="homeworkdataset.csv" host="HOME" index="home" sourcetype="csv" state=* level=critical | rare state
+source="homeworkdataset.csv" host="HOME" index="home" sourcetype="csv" state=* level=critical | rare state by level
+source="homeworkdataset.csv" host="HOME" index="home" sourcetype="csv" state=* | rare usr by level
+source="homeworkdataset.csv" host="HOME" index="home" sourcetype="csv" state=* level=critical | rare usr by level
+
+===STATS=======
+source="homeworkdataset.csv" host="HOME" index="home" sourcetype="csv" state=* usr=* | stats count(usr)
+source="homeworkdataset.csv" host="HOME" index="home" sourcetype="csv" state=* usr=* | stats count(usr) AS NumOfUser BY state
+source="homeworkdataset.csv" host="HOME" index="home" sourcetype="csv" state=* usr=* | stats count(usr) AS NumOfUser BY state 
+| sort -NumOfUser
+source="homeworkdataset.csv" host="HOME" index="home" sourcetype="csv" state=* usr=* | stats count(usr) AS NumOfUser BY state 
+| sort NumOfUser
+
+
+
+
+
+
+
+===TABLE=======
+source="homeworkdataset.csv" host="HOME" index="home" sourcetype="csv" state=* usr=* | table level
+source="homeworkdataset.csv" host="HOME" index="home" sourcetype="csv" state=* usr=* | table level state
+source="homeworkdataset.csv" host="HOME" index="home" sourcetype="csv" state=* usr=* | table level state usr
+
+===rename=======
+
+
+===dedup=======
+
+
+=============================================
+
+Splunk Fundamental - Lab Module 8 – Basic Commands - fields, table, rename and dedup.
+=================
+Sample Date - Splunk_f1_Data.zip
+https://www.devopsschool.com/tutorial/splunk/labs/fundamental/SplunkFundamentals1_module8.html
+
+
+Splunk Fundamental - Lab Module 9 – Transforming Commands
+=================
+Sample Date - Splunk_f1_Data.zip
+https://www.devopsschool.com/tutorial/splunk/labs/fundamental/SplunkFundamentals1_module9.html
+
+
+ADDITIONAL - MINING and Give me SPL Query in the CHAT
+count, avg, max, mean, median, sum
+
+
+
