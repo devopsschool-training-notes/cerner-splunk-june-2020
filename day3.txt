@@ -1,0 +1,109 @@
+Scene 1 - 
+	Setup universal forwarder
+	Setup Splunk(Indexer + Search Head) [LICENSE SERVER ]
+
+Scene 2 - 
+	Setup universal forwarder
+	Setup Splunk Indexer   [LICENSE SERVER ]
+	Setup Splunk Search Head
+Scene 3 - 
+	Setup universal forwarder
+	Setup Splunk Indexer  [LICENSE SERVER ] + 	Setup Heavy forwarder
+	Setup Splunk Search Head
+
+Scene 4 - 
+	Setup universal forwarder
+	Setup Heavy forwarder
+	Setup Splunk Indexer  [LICENSE SERVER ]
+	Setup Splunk Search Head
+	Setup Deployment Server (Deploy SOME APP)
+
+Scene 1 - 
+	Setup universal forwarder
+	Setup Splunk(Indexer + Search Head) [LICENSE SERVER ]
+
+======================================================================
+UNIVERSAL FORWARDER - 3.7.254.66
+Splunk  - 15.206.149.89
+
+Username - ubuntu
+sudo -s
+
+Setup Splunk(Indexer + Search Head) [LICENSE SERVER ]
+========================================================
+$ sudo-s
+$ cd /opt
+$ wget -O splunk-8.0.4.1-ab7a85abaa98-Linux-x86_64.tgz 'https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&platform=linux&version=8.0.4.1&product=splunk&filename=splunk-8.0.4.1-ab7a85abaa98-Linux-x86_64.tgz&wget=true'
+$ tar -zxvf splunk-8.0.4.1-ab7a85abaa98-Linux-x86_64.tgz
+$ cd splunk
+$ cd bin
+$ ./splunk start --accept-license 
+http://15.206.149.89:8000/
+admin/admin123
+
+--------------
+1. Settings => Monitoring console => Setting => Forwarder Monitoring Setup => Forwarder Monitoring (ENABLE with 15 mins)
+2. Settings => Forwarding and Recieving => Receive data => Add New ==> Listen on this port (For example, 9997 will receive data on TCP port 9997)
+3. Restart a Splunk Instance
+Settings => Server Controls => Restart Splunk
+
+Setup universal forwarder
+========================================================
+$ sudo-s
+$ cd /opt
+$ wget -O splunkforwarder-8.0.4-767223ac207f-Linux-x86_64.tgz 'https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&platform=linux&version=8.0.4&product=universalforwarder&filename=splunkforwarder-8.0.4-767223ac207f-Linux-x86_64.tgz&wget=true'
+$ tar -zxvf splunkforwarder-8.0.4-767223ac207f-Linux-x86_64.tgz
+$ cd splunkforwarder
+
+# Create this file with some STRUCTURED Content
+vi /opt/unitest.csv
+
+name,age,city,skill
+devopsschool1,22,hyd1,devops1
+devopsschool2,23,hyd2,devops2
+devopsschool3,24,hyd3,devops3
+devopsschool4,25,hyd4,devops4
+
+Setting up output.conf
+$ ./bin/splunk add forward-server 15.206.149.89:9997 --accept-license 
+$ ./bin/splunk list forward-server
+
+Setting up input.conf
+$ ./bin/splunk list monitor 
+$ ./bin/splunk add monitor /opt/unitest.csv
+$ ./bin/splunk add monitor /var/log
+$ ./bin/splunk list forward-server
+
+
+$ ./bin/splunk restart
+$ ps -eaf | grep splunk
+$ ./bin/splunk list forward-server
+
+============LIST OF SERVER FOR MASTER ===============
+Shrey Chengappa	13.233.61.64
+Shwetha Bg	13.127.56.14
+Shilpa Shree	13.233.193.232
+Subrat Pattnaik	13.235.86.132
+Vijaya Kumar S P	15.206.148.165
+Sagar Jain M	13.127.107.81
+Manasapujha G R	15.206.149.237
+SUBAS MAHAPATRA	13.127.159.74
+Nikhil Kumar	52.66.50.255
+Manoj Kumar Swain	13.233.157.187
+shivani singh	13.235.67.172
+Pratyush Srivastava	13.126.206.216
+Ananda S. Chakraborty	15.206.164.177
+Sujith	13.233.56.105
+Purnabrata Chakraborty	3.7.253.61
+Vishnu Sundaresh	35.154.254.139
+	13.232.223.162
+
+
+Userr name - ubuntu
+Location - https://www.devopsschool.com/notes/docker/2019/
+PPK For Putty -  rajesh-mumbai.ppk
+PEM for SSH - rajesh-mumbai.pem
+
+
+
+
