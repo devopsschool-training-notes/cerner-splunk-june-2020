@@ -104,6 +104,24 @@ Location - https://www.devopsschool.com/notes/docker/2019/
 PPK For Putty -  rajesh-mumbai.ppk
 PEM for SSH - rajesh-mumbai.pem
 
+For Mac user 
+ssh -i keyfile ubuntu@ipaddd
 
 
-
+Shrey Chengappa	13.232.234.198	
+Shwetha Bg	13.126.63.29	
+Shilpa Shree	13.233.103.159	
+Subrat Pattnaik	13.127.74.209	
+Vijaya Kumar S P	13.127.36.223	
+Sagar Jain M	13.233.29.115	
+Manasapujha G R	13.235.68.206	
+SUBAS MAHAPATRA	3.7.253.54	
+Nikhil Kumar	15.206.212.207	
+Manoj Kumar Swain	52.66.28.170	
+shivani singh	13.233.131.174	
+Pratyush Srivastava	13.127.197.170	
+Ananda S. Chakraborty	13.233.91.24	
+Sujith	15.206.203.2	
+Purnabrata Chakraborty	35.154.221.64	
+Vishnu Sundaresh	13.233.199.101	
+	3.7.55.59	
